@@ -1,7 +1,7 @@
 {
   "name": "@elbstack/serverless-component-website",
   "version": "4.0.0",
-  "main": "./serverless.js",
+  "main": "serverless.js",
   "publishConfig": {
     "access": "public"
   },
