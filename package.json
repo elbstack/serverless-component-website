@@ -1,5 +1,5 @@
 {
-  "name": "@serverless/website",
+  "name": "@elbstack/serverless-component-website",
   "version": "4.0.0",
   "main": "./serverless.js",
   "publishConfig": {

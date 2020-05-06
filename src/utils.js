@@ -323,8 +323,11 @@ const deleteBucket = async (clients, bucketName) => {
 
 const getDomainHostedZoneId = async (clients, config) => {
   const hostedZonesRes = await clients.route53.listHostedZonesByName().promise()
-
+  log(JSON.stringify(hostedZonesRes, null, 2))
   const hostedZone = hostedZonesRes.HostedZones.find(
+    // Name has a period at the end, so we're using includes rather than equals
+    (zone) => zone.Name.includes(config.domain)
+  ) || hostedZonesRes.HostedZones.find(
     // Name has a period at the end, so we're using includes rather than equals
     (zone) => zone.Name.includes(config.nakedDomain)
   )
